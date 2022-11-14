@@ -27,6 +27,10 @@ async function main() {
   const token = await Token.deploy();
   await token.deployed();
 
+  const MyToken = await ethers.getContractFactory("MyToken");
+  const myToken = await MyToken.deploy();
+  await myToken.deployed();
+
   console.log("token", token);
 
   // We also save the contract's artifacts and address in the frontend directory
