@@ -27,7 +27,7 @@ async function main() {
   const token = await Token.deploy();
   await token.deployed();
 
-  const MyToken = await ethers.getContractFactory("ERC721");
+  const MyToken = await ethers.getContractFactory("MyToken");
   const myToken = await MyToken.deploy();
   await myToken.deployed();
 
