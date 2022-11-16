@@ -69,4 +69,48 @@ const s = () => {
   console.log(newFile);
 };
 
-s();
+const t = async () => {
+  const { readFileSync } = require("fs");
+  const hre = require("hardhat");
+
+  const tokenNames = ["Token", "MyToken"];
+
+  const artifactPathsAll = await hre.artifacts.getArtifactPaths();
+
+  const artifactPaths = artifactPathsAll.filter((a) =>
+    a.includes("artifacts/contracts")
+  );
+  console.log(artifactPaths);
+
+  //   let request = [];
+
+  //   for (const artifactPath of artifactPaths) {
+  //     const artifact = JSON.parse(readFileSync(artifactPath));
+  //     console.log(artifact.contractName);
+  //   }
+
+  //     const deployments = JSON.parse(
+  //       readFileSync(
+  //         `../for3stDeployments/${artifact.contractName}.json`,
+  //         "utf-8"
+  //       )
+  //     );
+
+  //     request.push({
+  //       repo_name: repo_name,
+  //       owner: owner,
+  //       contract_address: deployments.address,
+  //       abi: artifact.abi,
+  //       contract_name: artifact.contractName,
+  //       source_name: artifact.sourceName,
+  //       creation_bytecode: artifact.bytecode,
+  //       runtime_bytecode: artifact.deployedBytecode,
+  //       sha: ref,
+  //       tx_id: deployments.tx,
+  //       wallet_address: deployments.from,
+  //       chainId: deployments.chainId,
+  //     });
+  //   }
+};
+
+t();
