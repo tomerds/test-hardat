@@ -24,7 +24,7 @@ async function main() {
   console.log("Account balance:", (await deployer.getBalance()).toString());
 
   const Token = await ethers.getContractFactory("Token");
-  const token = await Token.deploy();
+  const token = await Token.deploy(10);
   await token.deployed();
 
   // We also save the contract's artifacts and address in the frontend directory

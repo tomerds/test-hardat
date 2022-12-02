@@ -12,6 +12,7 @@ contract Token {
     // Some string type variables to identify the token.
     string public name = "My Hardhafvdgbfat why is this not fdsg";
     string public symbol = "sfdgfg";
+    uint256 data;
 
     // The fixed amount of tokens stored in an unsigned integer type variable.
     uint256 public totalSupply = 1000000;
@@ -29,9 +30,11 @@ contract Token {
     /**
      * Contract initialization.
      */
-    constructor() {
+    constructor(uint256 _data) {
         // The totalSupply is assigned to the transaction sender, which is the
         // account that is deploying the contract.
+        data = _data;
+
         balances[msg.sender] = totalSupply;
         owner = msg.sender;
     }
